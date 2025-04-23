@@ -1,21 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\",
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\controlgastos\\application\\dtos\\presupuestodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\gestiongasto\\application\\services\\presupuestoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|solutionrelative:application\\services\\presupuestoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\gestiongasto\\application\\services\\ordencompraservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|solutionrelative:application\\services\\ordencompraservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\gestiongasto\\application\\interfaces\\ipresupuestoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|solutionrelative:application\\interfaces\\ipresupuestoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\gestiongasto\\application\\interfaces\\iordencompraservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|solutionrelative:application\\interfaces\\iordencompraservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\gestiongasto\\application\\dtos\\presupuestodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|solutionrelative:application\\dtos\\presupuestodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\controlgastos\\api\\controllers\\presupuestocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\gestiongasto\\application\\dtos\\ordencompradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|solutionrelative:application\\dtos\\ordencompradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\gestiongasto\\api\\controllers\\presupuestocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|solutionrelative:api\\controllers\\presupuestocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\controlgastos\\api\\controllers\\ordencompracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\gestiongasto\\api\\controllers\\ordencompracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|solutionrelative:api\\controllers\\ordencompracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\controlgastos\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|c:\\users\\usuario\\desktop\\gestiongasto\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89B2DD96-65A3-4F61-9C35-DB887BE10F3C}|ControlGastos.csproj|solutionrelative:infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,8 +46,73 @@
       "DocumentGroups": [
         {
           "DockedHeight": 295,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PresupuestoService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\Services\\PresupuestoService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\PresupuestoService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\Services\\PresupuestoService.cs",
+              "RelativeToolTip": "Application\\Services\\PresupuestoService.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T04:35:34.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrdenCompraService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\Services\\OrdenCompraService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\OrdenCompraService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\Services\\OrdenCompraService.cs",
+              "RelativeToolTip": "Application\\Services\\OrdenCompraService.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAA9wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T04:35:05.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IPresupuestoService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\Interfaces\\IPresupuestoService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IPresupuestoService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\Interfaces\\IPresupuestoService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IPresupuestoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T04:34:57.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IOrdenCompraService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\Interfaces\\IOrdenCompraService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrdenCompraService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\Interfaces\\IOrdenCompraService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrdenCompraService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T04:34:54.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrdenCompraDto.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\DTOs\\OrdenCompraDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\OrdenCompraDto.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\DTOs\\OrdenCompraDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\OrdenCompraDto.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA4wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T04:33:55.372Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
@@ -42,52 +127,51 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "PresupuestoController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\Api\\Controllers\\PresupuestoController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Api\\Controllers\\PresupuestoController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\PresupuestoController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\Api\\Controllers\\PresupuestoController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Api\\Controllers\\PresupuestoController.cs",
               "RelativeToolTip": "Api\\Controllers\\PresupuestoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-23T04:13:44.077Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "OrdenCompraController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\Api\\Controllers\\OrdenCompraController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Api\\Controllers\\OrdenCompraController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\OrdenCompraController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\Api\\Controllers\\OrdenCompraController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Api\\Controllers\\OrdenCompraController.cs",
               "RelativeToolTip": "Api\\Controllers\\OrdenCompraController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-23T04:13:39.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\Infrastructure\\DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Infrastructure\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "Infrastructure\\DependencyInjection.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Infrastructure\\DependencyInjection.cs",
               "RelativeToolTip": "Infrastructure\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T04:12:59.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T04:12:59.908Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "PresupuestoDto.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\Application\\DTOs\\PresupuestoDto.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\DTOs\\PresupuestoDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\PresupuestoDto.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\Application\\DTOs\\PresupuestoDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\PresupuestoDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\Application\\DTOs\\PresupuestoDto.cs*",
+              "RelativeToolTip": "Application\\DTOs\\PresupuestoDto.cs*",
+              "ViewState": "AgIAABoAAAAAAAAAAAAmwCQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-23T04:12:38.706Z",
               "EditorCaption": ""

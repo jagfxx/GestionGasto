@@ -21,7 +21,7 @@ namespace ControlGastos.Application.DTOs
         public string Descripcion { get; set; }
         public int Cantidad { get; set; }
         public decimal PrecioUnitario { get; set; }
-        public string Moneda { get; set; } = "MXN";
+        public string Moneda { get; set; } = "COP";
     }
 
     public class CrearOrdenCompraDto

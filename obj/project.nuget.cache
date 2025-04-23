@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PUEQvyF8jjk=",
+  "dgSpecHash": "/L07QdonVwY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\ControlGastos.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\ControlGastos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",

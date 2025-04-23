@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\ControlGastos\\ControlGastos.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\GestionGasto\\ControlGastos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\ControlGastos\\ControlGastos.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\GestionGasto\\ControlGastos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\ControlGastos.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\ControlGastos.csproj",
         "projectName": "ControlGastos",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\ControlGastos.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\ControlGastos.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\ControlGastos\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

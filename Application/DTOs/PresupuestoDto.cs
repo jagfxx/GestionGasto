@@ -34,7 +34,7 @@ namespace ControlGastos.Application.DTOs
         public string Descripcion { get; set; }
         public int CantidadPresupuestada { get; set; }
         public decimal PrecioUnitarioEstimado { get; set; }
-        public string Moneda { get; set; } = "MXN";
+        public string Moneda { get; set; } = "COP";
         public string Categoria { get; set; }
     }
 }
