@@ -1,0 +1,6 @@
+@ControlGastos_HostAddress = http://localhost:5276
+
+GET {{ControlGastos_HostAddress}}/ControlGastos/
+Accept: application/json
+
+###
