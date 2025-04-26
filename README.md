@@ -146,6 +146,9 @@ Archivos importantes adicionales:
 ![Texto alternativo](/img/agregados-02.png)
 ![Texto alternativo](/img/agregados-03.png)
 ![Texto alternativo](/img/Imagen1.png)
+---
+# Bounded context
+![Texto alternativo](/img/04.jpg)
 
 ---
 # 🧪 Casos de Prueba para Breakpoints
