@@ -1,4 +1,4 @@
-﻿using ControlGastos.Application.DTOs;
+using ControlGastos.Application.DTOs;
 using ControlGastos.Application.Interfaces;
 using ControlGastos.Domain.Entities;
 using ControlGastos.Domain.Interfaces;
@@ -41,6 +41,11 @@ namespace ControlGastos.Application.Services
 
         public async Task<OrdenCompraDto> CreateAsync(CrearOrdenCompraDto ordenCompraDto)
         {
+            // NEW ISSUE: Variables sin usar
+            var unusedVariable = "Esta variable nunca se usa";
+            int unusedCounter = 0;
+            string tempData = null;
+            
             var ordenCompra = new OrdenCompra(
                 ordenCompraDto.Numero,
                 ordenCompraDto.Solicitante,
@@ -88,6 +93,51 @@ namespace ControlGastos.Application.Services
         }
 
         private OrdenCompraDto ToDto(OrdenCompra ordenCompra)
+        {
+            return new OrdenCompraDto
+            {
+                Id = ordenCompra.Id,
+                Numero = ordenCompra.Numero,
+                FechaSolicitud = ordenCompra.FechaSolicitud,
+                Solicitante = ordenCompra.Solicitante,
+                Proveedor = ordenCompra.Proveedor,
+                Items = ordenCompra.Items.Select(i => new ItemOrdenCompraDto
+                {
+                    Codigo = i.Codigo,
+                    Descripcion = i.Descripcion,
+                    Cantidad = i.Cantidad,
+                    PrecioUnitario = i.PrecioUnitario.Valor,
+                    Moneda = i.PrecioUnitario.Moneda
+                }).ToList(),
+                Estado = ordenCompra.Estado.ToString(),
+                MotivoRechazo = ordenCompra.MotivoRechazo
+            };
+        }
+
+        // DUPLICATIONS: Métodos duplicados con la misma lógica
+        private OrdenCompraDto ConvertirADto(OrdenCompra ordenCompra)
+        {
+            return new OrdenCompraDto
+            {
+                Id = ordenCompra.Id,
+                Numero = ordenCompra.Numero,
+                FechaSolicitud = ordenCompra.FechaSolicitud,
+                Solicitante = ordenCompra.Solicitante,
+                Proveedor = ordenCompra.Proveedor,
+                Items = ordenCompra.Items.Select(i => new ItemOrdenCompraDto
+                {
+                    Codigo = i.Codigo,
+                    Descripcion = i.Descripcion,
+                    Cantidad = i.Cantidad,
+                    PrecioUnitario = i.PrecioUnitario.Valor,
+                    Moneda = i.PrecioUnitario.Moneda
+                }).ToList(),
+                Estado = ordenCompra.Estado.ToString(),
+                MotivoRechazo = ordenCompra.MotivoRechazo
+            };
+        }
+
+        private OrdenCompraDto MapearOrdenCompra(OrdenCompra ordenCompra)
         {
             return new OrdenCompraDto
             {

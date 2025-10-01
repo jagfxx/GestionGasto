@@ -1,4 +1,4 @@
-﻿using ControlGastos.Application.DTOs;
+using ControlGastos.Application.DTOs;
 using ControlGastos.Application.Interfaces;
 using ControlGastos.Domain.Entities;
 using ControlGastos.Domain.Interfaces;
@@ -105,6 +105,63 @@ namespace ControlGastos.Application.Services
                     Categoria = i.Categoria.Nombre
                 }).ToList()
             };
+        }
+
+        // MAINTAINABILITY: Función demasiado larga y mal nombrada
+        public string a(Guid x, string y, int z, decimal w, string q, bool r, DateTime s, string t, int u, string v)
+        {
+            var result = "";
+            if (x != Guid.Empty)
+            {
+                result += "ID válido: " + x.ToString();
+                if (!string.IsNullOrEmpty(y))
+                {
+                    result += " - Nombre: " + y;
+                    if (z > 0)
+                    {
+                        result += " - Cantidad: " + z.ToString();
+                        if (w > 0)
+                        {
+                            result += " - Precio: " + w.ToString();
+                            if (!string.IsNullOrEmpty(q))
+                            {
+                                result += " - Moneda: " + q;
+                                if (r)
+                                {
+                                    result += " - Activo: Sí";
+                                    if (s != DateTime.MinValue)
+                                    {
+                                        result += " - Fecha: " + s.ToString();
+                                        if (!string.IsNullOrEmpty(t))
+                                        {
+                                            result += " - Categoría: " + t;
+                                            if (u > 0)
+                                            {
+                                                result += " - Stock: " + u.ToString();
+                                                if (!string.IsNullOrEmpty(v))
+                                                {
+                                                    result += " - Proveedor: " + v;
+                                                    var total = z * w;
+                                                    result += " - Total: " + total.ToString();
+                                                    var descuento = total * 0.1m;
+                                                    result += " - Descuento: " + descuento.ToString();
+                                                    var final = total - descuento;
+                                                    result += " - Final: " + final.ToString();
+                                                    var impuesto = final * 0.19m;
+                                                    result += " - Impuesto: " + impuesto.ToString();
+                                                    var conImpuesto = final + impuesto;
+                                                    result += " - Con impuesto: " + conImpuesto.ToString();
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return result;
         }
     }
 }

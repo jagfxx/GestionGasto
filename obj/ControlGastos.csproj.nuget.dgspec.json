@@ -1,36 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\GestionGasto\\ControlGastos.csproj": {}
+    "C:\\Users\\UPB\\Desktop\\GestionGasto\\ControlGastos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\GestionGasto\\ControlGastos.csproj": {
+    "C:\\Users\\UPB\\Desktop\\GestionGasto\\ControlGastos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\ControlGastos.csproj",
+        "projectUniqueName": "C:\\Users\\UPB\\Desktop\\GestionGasto\\ControlGastos.csproj",
         "projectName": "ControlGastos",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\ControlGastos.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\GestionGasto\\obj\\",
+        "projectPath": "C:\\Users\\UPB\\Desktop\\GestionGasto\\ControlGastos.csproj",
+        "packagesPath": "C:\\Users\\UPB\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\UPB\\Desktop\\GestionGasto\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\UPB\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -44,11 +40,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
@@ -82,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
