@@ -6,9 +6,13 @@ namespace ControlGastos.Application.DTOs
 {
     public class PresupuestoDto
     {
-        public Guid Id { get; set; }
-        public string Nombre { get; set; }
-        public DateTime FechaCreacion { get; set; }
+        public Guid? Id { get; set; }
+        
+        [Required(ErrorMessage = "El nombre del presupuesto es requerido")]
+        [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres")]
+        public string? Nombre { get; set; }
+        
+        public DateTime? FechaCreacion { get; set; }
         public List<ItemPresupuestoDto> Items { get; set; } = new List<ItemPresupuestoDto>();
     }
 

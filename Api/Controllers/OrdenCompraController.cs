@@ -41,17 +41,25 @@ namespace ControlGastos.API.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-
             var nuevaOrdenCompra = await _ordenCompraService.CreateAsync(ordenCompraDto);
             return CreatedAtAction(nameof(GetById), new { id = nuevaOrdenCompra.Id }, nuevaOrdenCompra);
         }
 
         [HttpPost("validar")]
-        public async Task<ActionResult<ResultadoValidacionDto>> ValidarOrdenCompra([FromBody] ValidarOrdenCompraRequest request)
+        public async Task<IActionResult> ValidarOrdenCompra([FromBody] ValidarOrdenCompraRequest request)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
-                var resultado = await _ordenCompraService.ValidarOrdenCompraAsync(request.OrdenCompraId, request.PresupuestoId);
+                // Como ya validamos que no son nulos, podemos usar el operador de supresión nula (!)
+                var resultado = await _ordenCompraService.ValidarOrdenCompraAsync(
+                    request.OrdenCompraId!.Value, 
+                    request.PresupuestoId!.Value);
+
                 return Ok(resultado);
             }
             catch (KeyNotFoundException ex)
@@ -67,10 +75,10 @@ namespace ControlGastos.API.Controllers
 
     public class ValidarOrdenCompraRequest
     {
-        [Required]
-        public Guid OrdenCompraId { get; set; }
+        [Required(ErrorMessage = "El ID de la orden de compra es requerido")]
+        public Guid? OrdenCompraId { get; set; }
         
-        [Required]
-        public Guid PresupuestoId { get; set; }
+        [Required(ErrorMessage = "El ID del presupuesto es requerido")]
+        public Guid? PresupuestoId { get; set; }
     }
 }
