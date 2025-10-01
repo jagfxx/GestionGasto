@@ -18,25 +18,25 @@ namespace ControlGastos.Application.DTOs
 
     public class ItemPresupuestoDto
     {
-        [Required]
-        public string Codigo { get; set; }
+        [Required(ErrorMessage = "El código es requerido")]
+        public string? Codigo { get; set; }
         
-        [Required]
-        public string Descripcion { get; set; }
+        [Required(ErrorMessage = "La descripción es requerida")]
+        public string? Descripcion { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "La cantidad es requerida")]
         [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser mayor a cero")]
-        public int CantidadPresupuestada { get; set; }
+        public int? CantidadPresupuestada { get; set; } = 1;
         
-        [Required]
+        [Required(ErrorMessage = "El precio unitario es requerido")]
         [Range(0.01, double.MaxValue, ErrorMessage = "El precio debe ser mayor a cero")]
-        public decimal PrecioUnitarioEstimado { get; set; }
+        public decimal? PrecioUnitarioEstimado { get; set; } = 0.01m;
         
-        [Required]
+        [Required(ErrorMessage = "La moneda es requerida")]
         public string Moneda { get; set; } = "MXN";
         
-        [Required]
-        public string Categoria { get; set; }
+        [Required(ErrorMessage = "La categoría es requerida")]
+        public string? Categoria { get; set; }
     }
 
     public class CrearPresupuestoDto
@@ -53,7 +53,7 @@ namespace ControlGastos.Application.DTOs
     public class AgregarItemPresupuestoDto
     {
         [Required(ErrorMessage = "El ID del presupuesto es requerido")]
-        public Guid PresupuestoId { get; set; }
+        public Guid? PresupuestoId { get; set; }
         
         [Required(ErrorMessage = "El código es requerido")]
         public string Codigo { get; set; }

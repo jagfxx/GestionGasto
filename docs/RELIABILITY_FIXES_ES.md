@@ -10,12 +10,24 @@
   public async Task<IActionResult> ValidarOrdenCompra(ValidarOrdenCompraRequest request)
   ```
 
-### 2. Propiedades No Anulables
-- **Problema**: Las propiedades de valor (value types) en DTOs no eran anulables, lo que podía causar valores por defecto no deseados.
-- **Ejemplo**:
+### 2. Propiedades de Tipo Valor en DTOs
+- **Problema**: Las propiedades de valor (value types) en DTOs no eran anulables, lo que podía causar valores por defecto no deseados o under-posting.
+- **Ejemplo Antes**:
   ```csharp
-  // Antes (propiedad no anulable)
-  public Guid OrdenCompraId { get; set; }
+  // Propiedad no anulable (puede causar under-posting)
+  public int CantidadPresupuestada { get; set; }
+  public decimal PrecioUnitarioEstimado { get; set; }
+  ```
+- **Solución**: Hacer las propiedades anulables y agregar valores predeterminados cuando sea apropiado.
+- **Ejemplo Después**:
+  ```csharp
+  [Required(ErrorMessage = "La cantidad es requerida")]
+  [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser mayor a cero")]
+  public int? CantidadPresupuestada { get; set; } = 1;
+  
+  [Required(ErrorMessage = "El precio unitario es requerido")]
+  [Range(0.01, double.MaxValue, ErrorMessage = "El precio debe ser mayor a cero")]
+  public decimal? PrecioUnitarioEstimado { get; set; } = 0.01m;
   ```
 
 ### 3. Falta de Mensajes de Error Descriptivos
