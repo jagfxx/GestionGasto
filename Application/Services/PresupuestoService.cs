@@ -101,67 +101,88 @@ namespace ControlGastos.Application.Services
                     Descripcion = i.Descripcion,
                     CantidadPresupuestada = i.CantidadPresupuestada,
                     PrecioUnitarioEstimado = i.PrecioUnitarioEstimado.Valor,
-                    Moneda = i.PrecioUnitarioEstimado.Moneda,
                     Categoria = i.Categoria.Nombre
                 }).ToList()
             };
         }
 
-        // MAINTAINABILITY: Función demasiado larga y mal nombrada
-        public string a(Guid x, string y, int z, decimal w, string q, bool r, DateTime s, string t, int u, string v)
+        /// <summary>
+        /// Genera un resumen detallado de un presupuesto con cálculos financieros
+        /// </summary>
+        /// <param name="presupuestoId">Identificador único del presupuesto</param>
+        /// <param name="nombre">Nombre del presupuesto</param>
+        /// <param name="cantidad">Cantidad de unidades</param>
+        /// <param name="precioUnitario">Precio por unidad</param>
+        /// <param name="moneda">Tipo de moneda</param>
+        /// <param name="estaActivo">Indica si el presupuesto está activo</param>
+        /// <param name="fecha">Fecha del presupuesto</param>
+        /// <param name="categoria">Categoría del presupuesto</param>
+        /// <param name="stock">Cantidad de stock</param>
+        /// <param name="proveedor">Nombre del proveedor</param>
+        /// <returns>Un string con la información del presupuesto</returns>
+        private string GenerarResumenDetallado(
+            Guid presupuestoId,
+            string nombre,
+            int cantidad,
+            decimal precioUnitario,
+            string moneda,
+            bool estaActivo,
+            DateTime fecha,
+            string categoria,
+            int stock,
+            string proveedor)
         {
-            var result = "";
-            if (x != Guid.Empty)
+            // Validaciones iniciales
+            if (presupuestoId == Guid.Empty) return "ID de presupuesto no válido";
+            if (string.IsNullOrEmpty(nombre)) return "Nombre de presupuesto requerido";
+            if (cantidad <= 0) return "La cantidad debe ser mayor a cero";
+            if (precioUnitario <= 0) return "El precio unitario debe ser mayor a cero";
+            if (string.IsNullOrEmpty(moneda)) return "Moneda requerida";
+            if (fecha == DateTime.MinValue) return "Fecha no válida";
+            if (string.IsNullOrEmpty(categoria)) return "Categoría requerida";
+            if (stock <= 0) return "Stock debe ser mayor a cero";
+            if (string.IsNullOrEmpty(proveedor)) return "Proveedor requerido";
+
+            // Cálculos financieros
+            var total = CalcularTotal(cantidad, precioUnitario);
+            var descuento = CalcularDescuento(total);
+            var subtotal = total - descuento;
+            var impuesto = CalcularImpuesto(subtotal);
+            var totalConImpuesto = subtotal + impuesto;
+
+            // Construcción del resumen
+            var resumen = new List<string>
             {
-                result += "ID válido: " + x.ToString();
-                if (!string.IsNullOrEmpty(y))
-                {
-                    result += " - Nombre: " + y;
-                    if (z > 0)
-                    {
-                        result += " - Cantidad: " + z.ToString();
-                        if (w > 0)
-                        {
-                            result += " - Precio: " + w.ToString();
-                            if (!string.IsNullOrEmpty(q))
-                            {
-                                result += " - Moneda: " + q;
-                                if (r)
-                                {
-                                    result += " - Activo: Sí";
-                                    if (s != DateTime.MinValue)
-                                    {
-                                        result += " - Fecha: " + s.ToString();
-                                        if (!string.IsNullOrEmpty(t))
-                                        {
-                                            result += " - Categoría: " + t;
-                                            if (u > 0)
-                                            {
-                                                result += " - Stock: " + u.ToString();
-                                                if (!string.IsNullOrEmpty(v))
-                                                {
-                                                    result += " - Proveedor: " + v;
-                                                    var total = z * w;
-                                                    result += " - Total: " + total.ToString();
-                                                    var descuento = total * 0.1m;
-                                                    result += " - Descuento: " + descuento.ToString();
-                                                    var final = total - descuento;
-                                                    result += " - Final: " + final.ToString();
-                                                    var impuesto = final * 0.19m;
-                                                    result += " - Impuesto: " + impuesto.ToString();
-                                                    var conImpuesto = final + impuesto;
-                                                    result += " - Con impuesto: " + conImpuesto.ToString();
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return result;
+                $"ID: {presupuestoId}",
+                $"Nombre: {nombre}",
+                $"Cantidad: {cantidad}",
+                $"Precio Unitario: {precioUnitario} {moneda}",
+                $"Estado: {(estaActivo ? "Activo" : "Inactivo")}",
+                $"Fecha: {fecha:dd/MM/yyyy}",
+                $"Categoría: {categoria}",
+                $"Stock: {stock}",
+                $"Proveedor: {proveedor}",
+                $"Subtotal: {total} {moneda}",
+                $"Descuento (10%): {descuento} {moneda}",
+                $"Base Imponible: {subtotal} {moneda}",
+                $"Impuesto (19%): {impuesto} {moneda}",
+                $"TOTAL: {totalConImpuesto} {moneda}"
+            };
+
+            return string.Join(Environment.NewLine, resumen);
         }
-    }
-}
+
+        private decimal CalcularTotal(int cantidad, decimal precioUnitario)
+        {
+            return cantidad * precioUnitario;
+        }
+
+        private decimal CalcularDescuento(decimal monto)
+        {
+            return monto * 0.1m; // 10% de descuento
+        }
+
+        private decimal CalcularImpuesto(decimal monto)
+        {
+            return monto * 0.19m; // 19% de IVA
+        }

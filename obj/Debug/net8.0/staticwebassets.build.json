@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "4XeqyF4RaWT6Y7uaM/8YiXRUzGZ+3qRvpHx+WH1z/kI=",
+  "Hash": "h5+r4+hghvAQlexae11tZ+JBMrkmoqJN6rPpp6lj/1M=",
   "Source": "ControlGastos",
   "BasePath": "_content/ControlGastos",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

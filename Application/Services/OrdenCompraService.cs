@@ -41,10 +41,7 @@ namespace ControlGastos.Application.Services
 
         public async Task<OrdenCompraDto> CreateAsync(CrearOrdenCompraDto ordenCompraDto)
         {
-            // NEW ISSUE: Variables sin usar
-            var unusedVariable = "Esta variable nunca se usa";
-            int unusedCounter = 0;
-            string tempData = null;
+            // Se eliminaron las variables no utilizadas que generaban advertencias
             
             var ordenCompra = new OrdenCompra(
                 ordenCompraDto.Numero,
@@ -114,49 +111,9 @@ namespace ControlGastos.Application.Services
             };
         }
 
-        // DUPLICATIONS: Métodos duplicados con la misma lógica
-        private OrdenCompraDto ConvertirADto(OrdenCompra ordenCompra)
-        {
-            return new OrdenCompraDto
-            {
-                Id = ordenCompra.Id,
-                Numero = ordenCompra.Numero,
-                FechaSolicitud = ordenCompra.FechaSolicitud,
-                Solicitante = ordenCompra.Solicitante,
-                Proveedor = ordenCompra.Proveedor,
-                Items = ordenCompra.Items.Select(i => new ItemOrdenCompraDto
-                {
-                    Codigo = i.Codigo,
-                    Descripcion = i.Descripcion,
-                    Cantidad = i.Cantidad,
-                    PrecioUnitario = i.PrecioUnitario.Valor,
-                    Moneda = i.PrecioUnitario.Moneda
-                }).ToList(),
-                Estado = ordenCompra.Estado.ToString(),
-                MotivoRechazo = ordenCompra.MotivoRechazo
-            };
-        }
-
-        private OrdenCompraDto MapearOrdenCompra(OrdenCompra ordenCompra)
-        {
-            return new OrdenCompraDto
-            {
-                Id = ordenCompra.Id,
-                Numero = ordenCompra.Numero,
-                FechaSolicitud = ordenCompra.FechaSolicitud,
-                Solicitante = ordenCompra.Solicitante,
-                Proveedor = ordenCompra.Proveedor,
-                Items = ordenCompra.Items.Select(i => new ItemOrdenCompraDto
-                {
-                    Codigo = i.Codigo,
-                    Descripcion = i.Descripcion,
-                    Cantidad = i.Cantidad,
-                    PrecioUnitario = i.PrecioUnitario.Valor,
-                    Moneda = i.PrecioUnitario.Moneda
-                }).ToList(),
-                Estado = ordenCompra.Estado.ToString(),
-                MotivoRechazo = ordenCompra.MotivoRechazo
-            };
-        }
+        // Se eliminaron los métodos duplicados:
+        // - ConvertirADto
+        // - MapearOrdenCompra
+        // Se mantiene solo ToDto que tiene la implementación canónica
     }
 }
