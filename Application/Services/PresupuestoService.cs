@@ -67,22 +67,32 @@ namespace ControlGastos.Application.Services
             if (presupuesto == null)
                 throw new KeyNotFoundException($"Presupuesto con ID {itemDto.PresupuestoId} no encontrado");
 
+            if (itemDto == null)
+                throw new ArgumentNullException(nameof(itemDto));
+
+            if (string.IsNullOrWhiteSpace(itemDto.Codigo))
+                throw new ArgumentException("El código del ítem es requerido", nameof(itemDto.Codigo));
+                
+            if (string.IsNullOrWhiteSpace(itemDto.Descripcion))
+                throw new ArgumentException("La descripción del ítem es requerida", nameof(itemDto.Descripcion));
+                
+            if (itemDto.CantidadPresupuestada <= 0)
+                throw new ArgumentException("La cantidad debe ser mayor a cero", nameof(itemDto.CantidadPresupuestada));
+                
+            if (itemDto.PrecioUnitarioEstimado <= 0)
+                throw new ArgumentException("El precio unitario debe ser mayor a cero", nameof(itemDto.PrecioUnitarioEstimado));
+
             var existeItem = await _presupuestoRepository.ExisteItemConCodigoAsync(itemDto.Codigo);
             if (existeItem)
                 throw new InvalidOperationException($"Ya existe un ítem con el código {itemDto.Codigo}");
 
             var categoriaGasto = ObtenerCategoria(itemDto.Categoria);
-            // Validate required fields before creating the item
-            if (!itemDto.CantidadPresupuestada.HasValue || !itemDto.PrecioUnitarioEstimado.HasValue)
-            {
-                throw new InvalidOperationException("Cantidad y precio unitario son requeridos");
-            }
-
+            
             var item = new ItemPresupuesto(
-                itemDto.Codigo ?? throw new ArgumentNullException(nameof(itemDto.Codigo)),
-                itemDto.Descripcion ?? throw new ArgumentNullException(nameof(itemDto.Descripcion)),
-                itemDto.CantidadPresupuestada.Value,
-                new Dinero(itemDto.PrecioUnitarioEstimado.Value, itemDto.Moneda ?? "MXN"),
+                itemDto.Codigo,
+                itemDto.Descripcion,
+                itemDto.CantidadPresupuestada,
+                new Dinero(itemDto.PrecioUnitarioEstimado, itemDto.Moneda ?? "MXN"),
                 categoriaGasto);
 
             await _presupuestoRepository.UpdateAsync(presupuesto);
