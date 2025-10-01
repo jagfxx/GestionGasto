@@ -33,4 +33,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-app.Run();
+// Usando RunAsync en lugar de Run para mejor manejo de recursos asíncronos
+await app.RunAsync();

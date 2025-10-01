@@ -186,3 +186,5 @@ namespace ControlGastos.Application.Services
         {
             return monto * 0.19m; // 19% de IVA
         }
+    }
+}

@@ -1,8 +1,9 @@
-﻿using ControlGastos.Application.DTOs;
+using ControlGastos.Application.DTOs;
 using ControlGastos.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace ControlGastos.API.Controllers
@@ -66,7 +67,10 @@ namespace ControlGastos.API.Controllers
 
     public class ValidarOrdenCompraRequest
     {
+        [Required]
         public Guid OrdenCompraId { get; set; }
+        
+        [Required]
         public Guid PresupuestoId { get; set; }
     }
 }
