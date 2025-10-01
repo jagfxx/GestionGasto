@@ -38,11 +38,17 @@ namespace ControlGastos.Application.Services
             foreach (var itemDto in presupuestoDto.Items)
             {
                 var categoriaGasto = ObtenerCategoria(itemDto.Categoria);
+                // Ensure required values are not null before creating the item
+                if (!itemDto.CantidadPresupuestada.HasValue || !itemDto.PrecioUnitarioEstimado.HasValue)
+                {
+                    throw new InvalidOperationException("Cantidad y precio unitario son requeridos");
+                }
+
                 var item = new ItemPresupuesto(
-                    itemDto.Codigo,
-                    itemDto.Descripcion,
-                    itemDto.CantidadPresupuestada,
-                    new Dinero(itemDto.PrecioUnitarioEstimado, itemDto.Moneda),
+                    itemDto.Codigo ?? throw new ArgumentNullException(nameof(itemDto.Codigo)),
+                    itemDto.Descripcion ?? throw new ArgumentNullException(nameof(itemDto.Descripcion)),
+                    itemDto.CantidadPresupuestada.Value,
+                    new Dinero(itemDto.PrecioUnitarioEstimado.Value, itemDto.Moneda ?? "MXN"),
                     categoriaGasto);
 
                 presupuesto.AgregarItem(item);
@@ -54,7 +60,10 @@ namespace ControlGastos.Application.Services
 
         public async Task<PresupuestoDto> AgregarItemAsync(AgregarItemPresupuestoDto itemDto)
         {
-            var presupuesto = await _presupuestoRepository.GetByIdAsync(itemDto.PresupuestoId);
+            if (itemDto == null) throw new ArgumentNullException(nameof(itemDto));
+            if (!itemDto.PresupuestoId.HasValue) throw new ArgumentException("El ID del presupuesto es requerido", nameof(itemDto.PresupuestoId));
+            
+            var presupuesto = await _presupuestoRepository.GetByIdAsync(itemDto.PresupuestoId.Value);
             if (presupuesto == null)
                 throw new KeyNotFoundException($"Presupuesto con ID {itemDto.PresupuestoId} no encontrado");
 
@@ -63,29 +72,41 @@ namespace ControlGastos.Application.Services
                 throw new InvalidOperationException($"Ya existe un ítem con el código {itemDto.Codigo}");
 
             var categoriaGasto = ObtenerCategoria(itemDto.Categoria);
+            // Validate required fields before creating the item
+            if (!itemDto.CantidadPresupuestada.HasValue || !itemDto.PrecioUnitarioEstimado.HasValue)
+            {
+                throw new InvalidOperationException("Cantidad y precio unitario son requeridos");
+            }
+
             var item = new ItemPresupuesto(
-                itemDto.Codigo,
-                itemDto.Descripcion,
-                itemDto.CantidadPresupuestada,
-                new Dinero(itemDto.PrecioUnitarioEstimado, itemDto.Moneda),
+                itemDto.Codigo ?? throw new ArgumentNullException(nameof(itemDto.Codigo)),
+                itemDto.Descripcion ?? throw new ArgumentNullException(nameof(itemDto.Descripcion)),
+                itemDto.CantidadPresupuestada.Value,
+                new Dinero(itemDto.PrecioUnitarioEstimado.Value, itemDto.Moneda ?? "MXN"),
                 categoriaGasto);
 
-            presupuesto.AgregarItem(item);
             await _presupuestoRepository.UpdateAsync(presupuesto);
 
             return ToDto(presupuesto);
         }
 
-        private CategoriaGasto ObtenerCategoria(string nombreCategoria)
+        private CategoriaGasto ObtenerCategoria(string? nombreCategoria)
         {
-            return nombreCategoria?.ToLower() switch
+            if (string.IsNullOrWhiteSpace(nombreCategoria))
+            {
+                throw new ArgumentException("El nombre de la categoría es requerido", nameof(nombreCategoria));
+            }
+            
+            var categoria = nombreCategoria.Trim().ToLower() switch
             {
                 "material" => CategoriaGasto.Material,
-                "mano de obra" => CategoriaGasto.ManoDeObra,
+                "mano de obra" or "manodeobra" => CategoriaGasto.ManoDeObra,
                 "maquinaria" => CategoriaGasto.Maquinaria,
-                "administrativo" => CategoriaGasto.Administrativo,
-                _ => CategoriaGasto.Otro
+                "administrativo" or "gastos administrativos" => CategoriaGasto.Administrativo,
+                _ => throw new ArgumentException($"Categoría '{nombreCategoria}' no válida. Las categorías válidas son: Material, Mano de obra, Maquinaria, Administrativo", nameof(nombreCategoria))
             };
+            
+            return categoria;
         }
 
         private PresupuestoDto ToDto(Presupuesto presupuesto)
